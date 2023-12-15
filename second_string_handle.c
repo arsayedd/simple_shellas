@@ -90,11 +90,6 @@ char *_strcat(char *s1, char *s2)
 	return (s1);
 }
 
-void * _memcpy(char * copy_to, const char * copy_from, size_t n)
-{
-return nullptr;
-}
-
 /**
  * _memcpy - duplicates a block of memory
  * @copy_to: pointer to the destination memory
