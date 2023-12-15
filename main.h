@@ -82,12 +82,12 @@ void *_malloc(unsigned int size);
 int _read(int fd, char *str, int str_size);
 void delete_read_spaces_helper(char *str, int str_size);
 void gets_comm_help(char *str, char **c_command,
-					int *cmd_size, int *i, int *j);
+int *cmd_size, int *i, int *j);
 void edit_comm_hlp(char **str_ptr,
-					 char **str, char *temp, int *index);
+char **str, char *temp, int *index);
 int hand_comm_hlp(char *first_segment, char **arguments, char c);
 void check_f_mode(char *filename, int *fd, int *act_mode);
 void core_shell(char *symbol, int fd, int act_mode);
 int hand_cd_helper(char **arguments, char **pwd,
- char **oldpwd, char *cd, char *cwd);
+char **oldpwd, char *cd, char *cwd);
 #endif
