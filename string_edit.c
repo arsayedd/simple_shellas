@@ -40,7 +40,6 @@ int zero_text(char *str)
  * Return: pointer to new string
  * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
-
 char *replaceTxtInd(char **str1, char *str2, int startIndex, int endIndex)
 {
 	int len1, len2, replaceLen, newLen;
