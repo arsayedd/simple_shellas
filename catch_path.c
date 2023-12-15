@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * get_path - gets the PATH variable from the environment
+ * gets_path - gets the PATH variable from the environment
  * @envp: pointer to environment
  * Return: pointer to PATH variable
  * Description: This function is not portable. It will only work on Linux.
  * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
-char *get_path(char *envp[])
+char *gets_path(char *envp[])
 {
 	char *path = "PATH=";
 	char cur_env[BUFFER_SIZE];
@@ -15,7 +15,7 @@ char *get_path(char *envp[])
 
 	while (envp[i])
 	{
-		_memcopy(cur_env, envp[i], _strlen(path));
+		_memcpy(cur_env, envp[i], _strlen(path));
 		cur_env[_strlen(path)] = '\0';
 		if (_strcmp(path, cur_env) == 0)
 		{
@@ -27,13 +27,13 @@ char *get_path(char *envp[])
 }
 
 /**
- * find_path - finds the path to a command
+ * find_paths - finds the path to a command
  * @path_i: path to search
  * @input: command to search for in path variable (e.g. ls)
  * Return: pointer to path if found, otherwise NULL
  * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
-char *find_path(char *path_i, char *input)
+char *find_paths(char *path_i, char *input)
 {
 	char *path, *chank = NULL;
 
