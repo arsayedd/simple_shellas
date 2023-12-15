@@ -15,11 +15,11 @@ void get_input(char **buff, int *size, int *buffer_size, int source)
 	int read = max_read;
 	char *temp = _malloc(max_read + 1);
 
-	intail_NULL(temp, max_read + 1);
+	initialize_NULL(temp, max_read + 1);
 	while (read == max_read)
 	{
 		read = _read(source, temp, max_read);
-		*size += remove_read_spaces(temp);
+		*size += delete_read_spaces(temp);
 
 		if (*size > *buffer_size - 1)
 		{
@@ -30,36 +30,36 @@ void get_input(char **buff, int *size, int *buffer_size, int source)
 		buffers(buff, NULL, 1);
 	}
 	_Free(temp);
-	handle_str_spaces(*buff, *buffer_size);
+	hand_str_spaces(*buff, *buffer_size);
 }
 /**
- * handle_str_spaces - handle spaces in string
+ * hand_str_spaces - handle spaces in string
  * @str: string to handle spaces in (char *)
  * @str_size: size of string to handle spaces in (int)
  * Return: void
  * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
-void handle_str_spaces(char *str, int str_size)
+void hand_str_spaces(char *str, int str_size)
 {
 	int i = 0;
 	char *temp = _malloc(str_size);
 
-	intail_NULL(temp, BUFFER_SIZE);
+	initialize_NULL(temp, BUFFER_SIZE);
 	while (str && str[i])
 	{
-		if (check_spaces(str, i) == 1)
+		if (see_spaces(str, i) == 1)
 		{
 			_strcpy(temp, str);
 			str[i] = ' ';
 			_strcpy(str + i + 1, temp + i);
 		}
-		else if (check_spaces(str, i) == 2)
+		else if (see_spaces(str, i) == 2)
 		{
 			_strcpy(temp, str);
 			str[++i] = ' ';
 			_strcpy(str + i + 1, temp + i);
 		}
-		else if (check_spaces(str, i) == 3)
+		else if (see_spaces(str, i) == 3)
 		{
 			_strcpy(temp, str);
 			i += 2;
@@ -71,12 +71,12 @@ void handle_str_spaces(char *str, int str_size)
 	_Free(temp);
 }
 /**
- * remove_read_spaces - remove spaces from string
+ * delete_read_spaces - remove spaces from string
  * @str: string to remove spaces from (char *)
  * Return: size of string after removing spaces (int)
  * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
-int remove_read_spaces(char *str)
+int delete_read_spaces(char *str)
 {
 	int strSize = _strlen(str);
 	int i = 0;
@@ -87,7 +87,7 @@ int remove_read_spaces(char *str)
 	{
 		if (i == strSize - 2)
 		{
-			intail_NULL(str, strSize);
+			initialize_NULL(str, strSize);
 			return (0);
 		}
 		else
@@ -97,17 +97,17 @@ int remove_read_spaces(char *str)
 			_strcpy(str, ptr);
 		}
 	}
-	remove_read_spaces_helper(str, strSize);
+	delete_read_spaces_helper(str, strSize);
 	return (_strlen(str));
 }
 /**
- * remove_read_spaces_helper - helper function for remove_read_spaces
+ * delete_read_spaces_helper - helper function for delete_read_spaces
  * @str: string to remove spaces from (char *)
  * @strSize: size of string to remove spaces from (int)
  * Return: void
  * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
-void remove_read_spaces_helper(char *str, int strSize)
+void delete_read_spaces_helper(char *str, int strSize)
 {
 	int i = 0;
 
@@ -115,7 +115,7 @@ void remove_read_spaces_helper(char *str, int strSize)
 	{
 		if (str[i] == ' ' && str[i + 1] == ' ')
 		{
-			int j = empty_text(str + i + 1);
+			int j = zero_text(str + i + 1);
 
 			if (j)
 			{
@@ -129,14 +129,14 @@ void remove_read_spaces_helper(char *str, int strSize)
 				char *ptr = str + i;
 
 				strSize = _strlen(str);
-				intail_NULL(ptr, strSize);
+				initialize_NULL(ptr, strSize);
 			}
 		}
 		i++;
 	}
 }
 /**
- * check_spaces - check if there are spaces in string
+ * see_spaces - check if there are spaces in string
  * @str: string to check (char *)
  * @i: index to check from (int)
  * Return:
@@ -145,7 +145,7 @@ void remove_read_spaces_helper(char *str, int strSize)
  * (3) if there is a space before && or ||, (0) otherwise (int)
  * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
-int check_spaces(char *str, int i)
+int see_spaces(char *str, int i)
 {
 	if (i && str[i] == ';' && str[i - 1] != ' ')
 	{
