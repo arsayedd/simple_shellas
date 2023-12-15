@@ -89,5 +89,5 @@ int hand_comm_hlp(char *first_segment, char **arguments, char c);
 void check_f_mode(char *filename, int *fd, int *act_mode);
 void core_shell(char *symbol, int fd, int act_mode);
 int hand_cd_helper(char **arguments, char **pwd,
-char **oldpwd, char *cd, char *cwd);
+					 char **oldpwd, char *cd, char *cwd);
 #endif
