@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * _strcpy - replicates the string pointed to by source
+ * _strcpy - copies the string pointed to by src
  * @copy_to: pointer to destination
  * @copy_from: pointer to source
  * Return: pointer to destination
- * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
 char *_strcpy(char *copy_to, char *copy_from)
 {
@@ -23,10 +22,9 @@ char *_strcpy(char *copy_to, char *copy_from)
  * _strstr - locates a substring in a string
  * @the_big_str: pointer to string
  * @the_little_str: pointer to substring
- * Return: pointer to the beginning of the located substring,
- * or NULL if the substring is not found.
+ * Return: pointer to the beginning of the located sub
+ * string, or NULL if the substring is not found.
  * Description: This function locates a substring.
- * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
 char *_strstr(char *the_big_str, char *the_little_str)
 {
@@ -51,11 +49,10 @@ char *_strstr(char *the_big_str, char *the_little_str)
 }
 
 /**
- * _strcmp - assesses two strings
+ * _strcmp - compares two strings
  * @string1: first string
  * @string2: second string
  * Return: 0 if strings are equal, otherwise the difference between the first
- * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
 int _strcmp(char *string1, char *string2)
 {
@@ -72,11 +69,10 @@ int _strcmp(char *string1, char *string2)
 	return (string1[i] - string2[i]);
 }
 /**
- * _strcat - combines two strings
+ * _strcat - concatenates two strings
  * @s1: first string
  * @s2: second string
  * Return: pointer to the resulting string
- * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
 char *_strcat(char *s1, char *s2)
 {
@@ -91,14 +87,13 @@ char *_strcat(char *s1, char *s2)
 }
 
 /**
- * _memcpy - duplicates a block of memory
+ * _memcopy - copies a block of memory
  * @copy_to: pointer to the destination memory
  * @copy_from: pointer to the source memory
  * @n: number of bytes to copy
  * Return: pointer to the destination memory
- * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
-void *_memcpy(char *copy_to, const char *copy_from, size_t n)
+void *_memcopy(char *copy_to, const char *copy_from, size_t n)
 {
 	size_t i;
 
