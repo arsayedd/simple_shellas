@@ -16,22 +16,22 @@ int main(int argc, char *argv[], char *envp[])
 
 	_state(0);
 	if (argc == 2)
-		check_file_mode(argv[1], &fd, &active_mode);
-	_enviornment(dup_2D(envp), 1);
-	shell_core(symbol, fd, active_mode);
-	_enviornment(NULL, 0);
+		check_f_mode(argv[1], &fd, &active_mode);
+	_enviornmnt(dup_2D(envp), 1);
+	core_shell(symbol, fd, active_mode);
+	_enviornmnt(NULL, 0);
 	_alias(NULL, 0);
 	return (State);
 }
 /**
- * check_file_mode - check if file mode is active
+ * check_f_mode - check if file mode is active
  * @filename: pointer to filename
  * @fd: pointer to file descriptor
  * @active_mode: pointer to active mode
  * Return: void
  * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
-void check_file_mode(char *filename, int *fd, int *active_mode)
+void check_f_mode(char *filename, int *fd, int *active_mode)
 {
 	if (access(filename, R_OK) != -1)
 	{
@@ -62,14 +62,14 @@ int Fsize(char *fname)
 	return (st.st_size);
 }
 /**
- * shell_core - core of shell
+ * core_shell - core of shell
  * @symbol: pointer to symbol
  * @fd: file descriptor
  * @active_mode: active mode
  * Return: void
  * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
-void shell_core(char *symbol, int fd, int active_mode)
+void core_shell(char *symbol, int fd, int active_mode)
 {
 
 	do {
@@ -86,7 +86,7 @@ void shell_core(char *symbol, int fd, int active_mode)
 		getc_command(str, &c_command, &command_size);
 		while (*c_command)
 		{
-			handle_command(c_command);
+			handle_comm(c_command);
 			getc_command(str, &c_command, &command_size);
 		}
 		if (read_size == 0)
