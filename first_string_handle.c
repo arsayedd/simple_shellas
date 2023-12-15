@@ -1,9 +1,10 @@
 #include "main.h"
 /**
- * _strchr - locates a character in a string
+ * _strchr - finds a character in a string
  * @str: pointer to string
  * @c: character to locate
- * Return: pointer to first occurrence of c in str
+ * Return: pointer to first occurrence of character in string
+ * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
 int *_strchr(const char *str, int c)
 {
@@ -18,7 +19,7 @@ int *_strchr(const char *str, int c)
 	return ((int *)str);
 }
 /**
- * _strtok - tokenizes a string
+ * _strtok - breaks down a string into tokens
  * @str: pointer to string
  * @delimiters: pointer to delimiters
  * Return: pointer to next token
@@ -44,10 +45,11 @@ char *_strtok(char *str, const char *delimiters)
 	return (ret);
 }
 /**
- * _strtok2 - tokenizes a string
+ * _strtok2 - breaks down a string into tokens
  * @str: pointer to string
  * @delimiters: pointer to delimiters
  * Return: pointer to next token
+ * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
 char *_strtok2(char *str, const char *delimiters)
 {
@@ -70,9 +72,10 @@ char *_strtok2(char *str, const char *delimiters)
 	return (ret);
 }
 /**
- * _strlen - returns the length of a string
+ * _strlen - determines the length of a string
  * @p_string: pointer to string
  * Return: length of string
+ * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
 int _strlen(char *p_string)
 {
@@ -83,9 +86,10 @@ int _strlen(char *p_string)
 	return (i);
 }
 /**
- * _strdup - returns a pointer to a newly allocated space in memory
+ * _strdup - provides a pointer to a newly allocated space in memory
  * @p_string: pointer to string
  * Return: pointer to new string
+ * Authors: Ahmed Raafat & Ahmed Abdelanasser
  */
 char *_strdup(char *p_string)
 {
