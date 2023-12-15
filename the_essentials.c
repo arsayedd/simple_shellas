@@ -31,7 +31,7 @@ void *_malloc(unsigned int size)
 		print(STDOUT_FILENO, "./hsh :malloc failed\n", NULL);
 		exit(-1);
 	}
-	initialize_NULL(str, size);
+	intail_NULL(str, size);
 	return (str);
 }
 
@@ -52,7 +52,7 @@ void *_realloc(void *ptr, int new_size)
 		return (NULL);
 	}
 	temp = _malloc(new_size);
-	_memcpy(temp, ptr, _strlen(ptr));
+	_memcopy(temp, ptr, _strlen(ptr));
 	_Free(ptr);
 	return (temp);
 }
